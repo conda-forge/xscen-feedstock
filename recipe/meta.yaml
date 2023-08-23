@@ -43,7 +43,7 @@ requirements:
     - pyyaml
     - rechunker
     - shapely
-    - xarray <2023.3.0
+    - xarray
     - xclim >=0.43
     - xesmf >=0.7
     - zarr
