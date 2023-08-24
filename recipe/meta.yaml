@@ -53,10 +53,16 @@ requirements:
 test:
   imports:
     - xscen
+  source_files:
+    - tests
   commands:
     - pip check
+    - pytest tests
   requires:
     - pip
+    - pytest
+    - tox <4.0
+    - tox-conda >=0.10.2
 
 about:
   home: https://github.com/Ouranosinc/xscen
