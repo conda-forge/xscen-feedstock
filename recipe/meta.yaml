@@ -25,7 +25,7 @@ requirements:
     - cftime
     - cf_xarray >=0.7.6
     - clisops >=0.10.0
-    - dask
+    - dask-core
     - flox
     - fsspec
     - geopandas
