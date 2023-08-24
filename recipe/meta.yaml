@@ -32,7 +32,7 @@ requirements:
     - h5netcdf
     - h5py
     - intake-esm >=2023.07.07
-    - matplotlib
+    - matplotlib-base
     - netCDF4
     - numpy
     - pandas >=2
