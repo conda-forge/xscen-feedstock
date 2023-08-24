@@ -20,29 +20,26 @@ requirements:
     - pip
   run:
     - python >=3.9
-    # FIXME
-    - pydantic <2.0  # See: https://github.com/intake/intake-esm/issues/617
     # Main package
     - cartopy
     - cftime
     - cf_xarray >=0.7.6
     - clisops >=0.10.0
-    - dask-core
+    - dask
     - flox
     - fsspec
     - geopandas
     - h5netcdf
     - h5py
-    - intake-esm >=2022.9.18
-    - matplotlib-base
-    - netcdf4
+    - intake-esm >=2023.07.07
+    - matplotlib
+    - netCDF4
     - numpy
-    - pandas >=2.0
+    - pandas >=2
     - parse
-    - pygeos
     - pyyaml
     - rechunker
-    - shapely
+    - shapely >= 2
     - sparse
     - toolz
     - xarray
