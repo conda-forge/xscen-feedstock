@@ -39,7 +39,7 @@ requirements:
     - parse
     - pyyaml
     - rechunker
-    - shapely >= 2
+    - shapely >=2
     - sparse
     - toolz
     - xarray
