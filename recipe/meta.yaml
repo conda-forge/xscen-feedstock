@@ -61,8 +61,7 @@ test:
   requires:
     - pip
     - pytest
-    - tox <4.0
-    - tox-conda >=0.10.2
+    - xdoctest
 
 about:
   home: https://github.com/Ouranosinc/xscen
