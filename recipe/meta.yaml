@@ -17,7 +17,11 @@ build:
 requirements:
   host:
     - python >=3.9
+    - babel
     - pip
+    - setuptools
+    - setuptools_scm
+    - wheel
   run:
     - python >=3.9
     # Main package
