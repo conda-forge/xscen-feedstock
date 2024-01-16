@@ -1,5 +1,5 @@
 {% set name = "xscen" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: 042abcb91bfadcd16943464a37a864c75eccf28bc6d694943516fe82d9f36abe
+  sha256: 08f5545b3082ba9b8ca22bb9c4bda125cb41505391b94f47d9fb6600a2d2ca2b
 
 build:
   noarch: python
@@ -17,33 +17,40 @@ build:
 requirements:
   host:
     - python >=3.9
+    - babel
     - pip
+    - setuptools
+    - setuptools_scm
+    - wheel
   run:
     - python >=3.9
     # Main package
+    - babel
     - cartopy
     - cftime
     - cf_xarray >=0.7.6
     - clisops >=0.10.0
     - dask-core
     - flox
-    - fsspec
+    - fsspec <2023.10.0
     - geopandas
     - h5netcdf
     - h5py
     - intake-esm >=2023.07.07
     - matplotlib-base
     - netCDF4
+    - numcodecs
     - numpy
-    - pandas >=2
+    - pandas >=2.0
     - parse
     - pyyaml
     - rechunker
-    - shapely >=2
-    - sparse
+    - scipy
+    - shapely >=2.0
+    - sparse <=0.14  # 0.15 breaks xe.SpatialAverager (https://github.com/Ouranosinc/xscen/actions/runs/7463533566/job/20308477398)
     - toolz
-    - xarray
-    - xclim >=0.43
+    - xarray <2023.11.0  # FIXME: Remove when pandas 2.2 is released and xclim is fixed.
+    - xclim >=0.46
     - xesmf >=0.7
     - zarr
     # Opt
