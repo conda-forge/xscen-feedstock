@@ -12,7 +12,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -36,7 +36,7 @@ requirements:
     - geopandas
     - h5netcdf
     - h5py
-    - intake-esm >=2023.07.07
+    - intake-esm >=2023.07.07,<2024.2.6  # v2024.2.6 drops Python3.9 support
     - matplotlib-base
     - netCDF4
     - numcodecs
