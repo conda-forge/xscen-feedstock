@@ -32,7 +32,7 @@ requirements:
     - clisops >=0.10.0
     - dask-core
     - flox
-    - fsspec <2023.10.0
+    - fsspec
     - geopandas
     - h5netcdf
     - h5py
@@ -41,13 +41,13 @@ requirements:
     - netCDF4
     - numcodecs
     - numpy
-    - pandas >=2.0
+    - pandas >=2.0,<2.2
     - parse
     - pyyaml
     - rechunker
     - scipy
     - shapely >=2.0
-    - sparse <=0.14  # 0.15 breaks xe.SpatialAverager (https://github.com/Ouranosinc/xscen/actions/runs/7463533566/job/20308477398)
+    - sparse
     - toolz
     - xarray <2023.11.0  # FIXME: Remove when pandas 2.2 is released and xclim is fixed.
     - xclim >=0.46
