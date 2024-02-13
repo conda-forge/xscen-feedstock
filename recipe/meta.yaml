@@ -61,7 +61,7 @@ test:
   imports:
     - xscen
   source_files:
-    - docs/notebooks/samples
+    - docs
     - tests
   commands:
     - pip check
