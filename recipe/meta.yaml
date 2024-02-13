@@ -60,15 +60,15 @@ requirements:
 test:
   imports:
     - xscen
-  # source_files:
-  #   - tests
+  source_files:
+    - tests
   commands:
     - pip check
-  #   - pytest tests
+    - pytest tests
   requires:
     - pip
-  #   - pytest
-  #   - xdoctest
+    - pytest
+    - xdoctest
 
 about:
   home: https://github.com/Ouranosinc/xscen
