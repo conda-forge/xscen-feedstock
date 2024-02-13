@@ -65,7 +65,7 @@ test:
     - tests
   commands:
     - pip check
-    - pytest tests
+    - pytest tests -m "not requires_netcdf"
   requires:
     - pip
     - pytest
