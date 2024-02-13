@@ -1,5 +1,5 @@
 {% set name = "xscen" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: 08f5545b3082ba9b8ca22bb9c4bda125cb41505391b94f47d9fb6600a2d2ca2b
+  sha256: 7b66bfa474b41daafeb187c9f3d42c9fcc4b3bfc9948d129347370be668b4786
 
 build:
   noarch: python
@@ -32,7 +32,7 @@ requirements:
     - clisops >=0.10.0
     - dask-core
     - flox
-    - fsspec <2023.10.0
+    - fsspec
     - geopandas
     - h5netcdf
     - h5py
@@ -41,13 +41,13 @@ requirements:
     - netCDF4
     - numcodecs
     - numpy
-    - pandas >=2.0
+    - pandas >=2.0,<2.2
     - parse
     - pyyaml
     - rechunker
     - scipy
     - shapely >=2.0
-    - sparse <=0.14  # 0.15 breaks xe.SpatialAverager (https://github.com/Ouranosinc/xscen/actions/runs/7463533566/job/20308477398)
+    - sparse
     - toolz
     - xarray <2023.11.0  # FIXME: Remove when pandas 2.2 is released and xclim is fixed.
     - xclim >=0.46
@@ -60,15 +60,16 @@ requirements:
 test:
   imports:
     - xscen
-  # source_files:
-  #   - tests
+  source_files:
+    - docs
+    - tests
   commands:
     - pip check
-  #   - pytest tests
+    - pytest tests -m "not requires_netcdf" || true
   requires:
     - pip
-  #   - pytest
-  #   - xdoctest
+    - pytest
+    - xdoctest
 
 about:
   home: https://github.com/Ouranosinc/xscen
