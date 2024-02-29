@@ -41,7 +41,7 @@ requirements:
     - netCDF4
     - numcodecs
     - numpy
-    - pandas >=2.0,<2.2
+    - pandas >=2.2
     - parse
     - pyyaml
     - rechunker
@@ -49,8 +49,8 @@ requirements:
     - shapely >=2.0
     - sparse
     - toolz
-    - xarray <2023.11.0  # FIXME: Remove when pandas 2.2 is released and xclim is fixed.
-    - xclim >=0.46
+    - xarray >=2023.11.0
+    - xclim >=0.48.2
     - xesmf >=0.7
     - zarr
     # Opt
