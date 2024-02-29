@@ -1,5 +1,5 @@
 {% set name = "xscen" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: 7b66bfa474b41daafeb187c9f3d42c9fcc4b3bfc9948d129347370be668b4786
+  sha256: 0a1973125f6b8488dbd590794b689fdbe151dac49e39fed53aceb49dbd9c8844
 
 build:
   noarch: python
