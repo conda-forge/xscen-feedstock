@@ -1,5 +1,5 @@
 {% set name = "xscen" %}
-{% set version = "0.8.3" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: 0a1973125f6b8488dbd590794b689fdbe151dac49e39fed53aceb49dbd9c8844
+  sha256: c972bb9bdeec74b0ba45a057a1a4a7d98396683d77f8e1b1ddd1d2156ecdd889
 
 build:
   noarch: python
@@ -55,7 +55,7 @@ requirements:
     - zarr
     # Opt
     - nc-time-axis >=1.3.1
-    - pyarrow >=1.0.0  # Used when opening catalogs
+    - pyarrow >=10.0.1  # Used when opening catalogs
 
 test:
   imports:
@@ -65,7 +65,7 @@ test:
     - tests
   commands:
     - pip check
-    - pytest tests -m "not requires_netcdf" || true
+    - pytest tests -m "not requires_netcdf"
   requires:
     - pip
     - pytest
