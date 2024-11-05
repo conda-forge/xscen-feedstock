@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
   sha256: d397a3a26eb028c69cfd6cabbd139fdacef0f65e7a413eda371707029b39a93e
 
 build:
@@ -74,8 +74,14 @@ test:
 about:
   home: https://github.com/Ouranosinc/xscen
   summary: A climate change scenario-building analysis framework, built with xclim/xarray.
+  description: |
+    A climate change scenario-building analysis framework, built with Intake-esm catalogs
+    and xarray-based packages such as xclim and xESMF.
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
+  doc_url: https://xscen.readthedocs.io
+  dev_url: https://github.com/Ouranosinc/xscen
 
 extra:
   recipe-maintainers:
