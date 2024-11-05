@@ -1,5 +1,6 @@
 {% set name = "xscen" %}
 {% set version = "0.10.1" %}
+{% set python_min = python_min|default("3.10") %}
 
 package:
   name: {{ name|lower }}
@@ -16,14 +17,14 @@ build:
 
 requirements:
   host:
-    - python >=3.10.*,<3.13
+    - python {{ python_min }}.*
     - babel
     - pip >=24.2.0
     - setuptools >=65.0.0
     - setuptools_scm >=8.0.0
     - wheel
   run:
-    - python >=3.10,<3.13
+    - python >={{ python_min }},<3.13
     # Main package
     - cartopy >=0.23.0
     - cftime
@@ -67,7 +68,7 @@ test:
     - pip check
     - pytest tests -m "not requires_netcdf" -k "not test_common_open"
   requires:
-    - python >=3.10,<3.13
+    - python >={{ python_min }},<3.13
     - pip
     - pytest
     - xdoctest
