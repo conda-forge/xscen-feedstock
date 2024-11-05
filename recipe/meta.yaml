@@ -16,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python >=3.10,<3.13
+    - python >=3.10.*,<3.13
     - babel
     - pip >=24.2.0
     - setuptools >=65.0.0
@@ -67,6 +67,7 @@ test:
     - pip check
     - pytest tests -m "not requires_netcdf" -k "not test_common_open"
   requires:
+    - python >=3.10,<3.13
     - pip
     - pytest
     - xdoctest
