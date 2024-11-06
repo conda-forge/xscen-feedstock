@@ -1,13 +1,14 @@
 {% set name = "xscen" %}
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
+{% set python_min = python_min|default("3.10") %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: e111e2c27b8df7bfd4f62603e84092805fc3e7f9cec273b9122889339374a65b
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
+  sha256: d397a3a26eb028c69cfd6cabbd139fdacef0f65e7a413eda371707029b39a93e
 
 build:
   noarch: python
@@ -16,14 +17,14 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}.*
     - babel
-    - pip
+    - pip >=24.2.0
     - setuptools >=65.0.0
     - setuptools_scm >=8.0.0
     - wheel
   run:
-    - python >=3.10
+    - python >={{ python_min }},<3.13
     # Main package
     - cartopy >=0.23.0
     - cftime
@@ -36,7 +37,7 @@ requirements:
     - h5netcdf
     - h5py
     - intake-esm >=2023.07.07
-    - matplotlib-base
+    - matplotlib-base >=3.6
     - netCDF4
     - numcodecs
     - numpy >=1.24
@@ -48,8 +49,8 @@ requirements:
     - shapely >=2.0
     - sparse
     - toolz
-    - xarray >=2023.11.0, !=2024.6.0
-    - xclim >=0.52.2, <0.53
+    - xarray >=2023.11.0,!=2024.6.0
+    - xclim >=0.53.2,<0.54
     - xesmf >=0.7
     - zarr >=2.13
     # Opt
@@ -67,6 +68,7 @@ test:
     - pip check
     - pytest tests -m "not requires_netcdf" -k "not test_common_open"
   requires:
+    - python ={{ python_min }}
     - pip
     - pytest
     - xdoctest
@@ -74,8 +76,14 @@ test:
 about:
   home: https://github.com/Ouranosinc/xscen
   summary: A climate change scenario-building analysis framework, built with xclim/xarray.
+  description: |
+    A climate change scenario-building analysis framework, built with Intake-esm catalogs
+    and xarray-based packages such as xclim and xESMF.
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
+  doc_url: https://xscen.readthedocs.io
+  dev_url: https://github.com/Ouranosinc/xscen
 
 extra:
   recipe-maintainers:
