@@ -63,13 +63,13 @@ test:
     - CHANGELOG.rst
     - docs
     - tests
-    - xscen
+    - src/xscen
   commands:
     - pip check
     - pytest tests -m "not requires_netcdf" -k "not test_common_open"
-    - pytest --xdoctest xscen
+    - pytest --xdoctest src/xscen
   requires:
-    - python ={{ python_min }}
+    - python {{ python_min }}
     - pip
     - pytest
     - xdoctest
