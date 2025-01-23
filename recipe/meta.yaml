@@ -40,6 +40,7 @@ requirements:
     - netCDF4
     - numcodecs
     - numpy >=1.24
+    - openpyxl
     - pandas >=2.2
     - parse
     - pyyaml
