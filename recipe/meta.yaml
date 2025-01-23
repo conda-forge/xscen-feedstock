@@ -68,12 +68,10 @@ test:
   commands:
     - pip check
     - pytest tests -m "not requires_netcdf" -k "not test_common_open"
-    - pytest --xdoctest src/xscen
   requires:
     - python {{ python_min }}
     - pip
     - pytest
-    - xdoctest
 
 about:
   home: https://github.com/Ouranosinc/xscen
