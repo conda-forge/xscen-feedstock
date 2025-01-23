@@ -9,6 +9,14 @@ Package license: Apache-2.0
 
 Summary: A climate change scenario-building analysis framework, built with xclim/xarray.
 
+Development: https://github.com/Ouranosinc/xscen
+
+Documentation: https://xscen.readthedocs.io
+
+A climate change scenario-building analysis framework, built with Intake-esm catalogs
+and xarray-based packages such as xclim and xESMF.
+
+
 Current build status
 ====================
 

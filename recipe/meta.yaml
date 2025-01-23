@@ -1,6 +1,6 @@
 {% set name = "xscen" %}
-{% set version = "0.10.1" %}
-{% set python_min = python_min|default("3.10") %}
+{% set version = "0.11.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: d397a3a26eb028c69cfd6cabbd139fdacef0f65e7a413eda371707029b39a93e
+  sha256: ee71f49f331456e9862556e4dbffb68d6331b6f9d434a3570623b15fd7086f5d
 
 build:
   noarch: python
@@ -18,7 +18,6 @@ build:
 requirements:
   host:
     - python {{ python_min }}.*
-    - babel
     - pip >=24.2.0
     - setuptools >=65.0.0
     - setuptools_scm >=8.0.0
@@ -30,8 +29,8 @@ requirements:
     - cftime
     - cf_xarray >=0.7.6
     - clisops >=0.10.0
-    - dask-core
-    - flox
+    - dask-core >=2024.8.1,<2024.11
+    - flox !=0.9.14
     - fsspec
     - geopandas
     - h5netcdf
@@ -41,6 +40,7 @@ requirements:
     - netCDF4
     - numcodecs
     - numpy >=1.24
+    - openpyxl
     - pandas >=2.2
     - parse
     - pyyaml
@@ -49,10 +49,10 @@ requirements:
     - shapely >=2.0
     - sparse
     - toolz
-    - xarray >=2023.11.0,!=2024.6.0
-    - xclim >=0.53.2,<0.54
+    - xarray >=2023.11.0,!=2024.6.0,<2024.10.0
+    - xclim >=0.53.2,<0.55
     - xesmf >=0.7
-    - zarr >=2.13
+    - zarr >=2.13,<3.0
     # Opt
     - nc-time-axis >=1.3.1
     - pyarrow >=10.0.1  # Used when opening catalogs
@@ -64,14 +64,14 @@ test:
     - CHANGELOG.rst
     - docs
     - tests
+    - src/xscen
   commands:
     - pip check
     - pytest tests -m "not requires_netcdf" -k "not test_common_open"
   requires:
-    - python ={{ python_min }}
+    - python {{ python_min }}
     - pip
     - pytest
-    - xdoctest
 
 about:
   home: https://github.com/Ouranosinc/xscen
