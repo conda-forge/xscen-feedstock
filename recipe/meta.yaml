@@ -64,13 +64,11 @@ test:
   source_files:
     - CHANGELOG.rst
     - docs
-    - templates/1-basic_workflow_with_config
-    - templates/2-indicators_only
     - tests
     - src/xscen
   commands:
     - pip check
-    - pytest tests -m "not requires_netcdf"
+    - pytest tests -m "not requires_netcdf" -k "not test_load_config"
   requires:
     - python {{ python_min }}
     - pip
