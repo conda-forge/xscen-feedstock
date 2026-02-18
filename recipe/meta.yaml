@@ -64,6 +64,8 @@ test:
   source_files:
     - CHANGELOG.rst
     - docs
+    - templates/1-basic_workflow_with_config
+    - templates/2-indicators_only
     - tests
     - src/xscen
   commands:
