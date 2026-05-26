@@ -1,5 +1,5 @@
 {% set name = "xscen" %}
-{% set version = "0.15.0" %}
+{% set version = "0.15.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: cb9c7d9424fbe6c85ec897a4d300e40482397dd6f17657b0d2a2953be55a55b7
+  sha256: 6beab0c7667faaa1f9a8dcba0bb1d5708cc03209adfc9ba8d853eb02a9d8c0e3
 
 build:
   noarch: python
