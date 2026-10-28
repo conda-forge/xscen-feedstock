@@ -1,14 +1,14 @@
 {% set name = "xscen" %}
-{% set version = "0.15.2" %}
-{% set python_min = "3.10" %}
+{% set version = "0.15.3" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: c4025a1ff101dd6dae21e886c4be4655232621f7da0baaca7da59892eac79f5f
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
+  sha256: faa05958a00676ef22b06316ab0a92a9d1cd38f339411158c5c488e375acce8e
 
 build:
   noarch: python
@@ -18,7 +18,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core >=3.12.0,<4.0
+    - flit-core >=4.0,<5.0
     - pip >=26.0.1
   run:
     - python >={{ python_min }}
@@ -37,7 +37,7 @@ requirements:
     - matplotlib-base >=3.6
     - nc-time-axis >=1.3.1
     - netCDF4
-    - numcodecs <0.16.0
+    - numcodecs
     - numpy >=1.24
     - openpyxl
     - pandas >=2.2
@@ -52,7 +52,7 @@ requirements:
     - sparse
     - toolz
     - xarray >=2023.11.0,!=2024.6.0
-    - xclim >=0.56.0,<0.62.0
+    - xclim >=0.56.0,<0.63.0
     - xesmf >=0.7,!=0.8.8
     - xsdba >=0.4.0
     - zarr >=2.13,<3.0
@@ -69,11 +69,11 @@ test:
     - src/xscen
   commands:
     - pip check
-    - pytest tests -m "not requires_netcdf"
+    - pytest tests -m "not requires_netcdf" -k "not test_project_catalog_create_and_update" # FIXME: Required 'zarr.zip' files missing from source distribution
   requires:
     - python {{ python_min }}
     - pip
-    - pytest
+    - pytest 
 
 about:
   home: https://github.com/Ouranosinc/xscen
