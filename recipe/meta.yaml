@@ -1,6 +1,6 @@
 {% set name = "xscen" %}
 {% set version = "0.15.3" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
@@ -37,7 +37,7 @@ requirements:
     - matplotlib-base >=3.6
     - nc-time-axis >=1.3.1
     - netCDF4
-    - numcodecs <0.16.0
+    - numcodecs
     - numpy >=1.24
     - openpyxl
     - pandas >=2.2
@@ -52,7 +52,7 @@ requirements:
     - sparse
     - toolz
     - xarray >=2023.11.0,!=2024.6.0
-    - xclim >=0.56.0,<0.62.0
+    - xclim >=0.56.0,<0.63.0
     - xesmf >=0.7,!=0.8.8
     - xsdba >=0.4.0
     - zarr >=2.13,<3.0
