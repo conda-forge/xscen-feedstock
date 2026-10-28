@@ -64,7 +64,6 @@ test:
   source_files:
     - CHANGELOG.rst
     - docs
-    - noteb
     - templates
     - tests
     - src/xscen
