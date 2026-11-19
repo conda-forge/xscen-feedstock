@@ -1,5 +1,5 @@
 {% set name = "xscen" %}
-{% set version = "0.15.3" %}
+{% set version = "0.16.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/xscen-{{ version }}.tar.gz
-  sha256: faa05958a00676ef22b06316ab0a92a9d1cd38f339411158c5c488e375acce8e
+  sha256: a3ba82bb43567767441849f657a9a036b3ff10a85f3c7e9df3fb63aa63b57b37
 
 build:
   noarch: python
@@ -73,7 +73,7 @@ test:
   requires:
     - python {{ python_min }}
     - pip
-    - pytest 
+    - pytest
 
 about:
   home: https://github.com/Ouranosinc/xscen
